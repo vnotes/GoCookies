@@ -75,6 +75,8 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/stretchr/testify v1.6.2-0.20200613113352-b8f7d52a4a7c h1:1LksD1nBILumdlo+fNrq9cgpoJFoRaRAJIHmkrNRta8=
 github.com/stretchr/testify v1.6.2-0.20200613113352-b8f7d52a4a7c/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
+github.com/urfave/negroni v1.0.1-0.20200608235619-7de0dfc1ff79 h1:310aEUwMcbpcxq9wp7hSr9f+mRV6grcai3HxdAmVl9k=
+github.com/urfave/negroni v1.0.1-0.20200608235619-7de0dfc1ff79/go.mod h1:Meg73S6kFm/4PpbYdq35yYWoCZ9mS/YSx+lKnmiohz4=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200604202706-70a84ac30bf9 h1:vEg9joUBmeBcK9iSJftGNf3coIG4HqZElCPehJsfAYM=
