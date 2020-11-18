@@ -1,11 +1,9 @@
-package main
+package httputil
 
 import (
 	"net/http"
 
-	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 var c = prometheus.NewCounterVec(
@@ -21,6 +19,7 @@ func APIHandler(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write([]byte("I am here."))
 }
 
+/*
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/api", APIHandler)
@@ -30,6 +29,7 @@ func main() {
 	_ = http.ListenAndServe(":11111", r)
 
 }
+*/
 
 func counterMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

@@ -1,11 +1,8 @@
-package main
+package httputil
 
 import (
 	"fmt"
 	"net/http"
-
-	"github.com/gorilla/mux"
-	"github.com/urfave/negroni"
 )
 
 func APIHttpHandler(w http.ResponseWriter, r *http.Request) {
@@ -18,7 +15,7 @@ func apiMiddleware(rw http.ResponseWriter, r *http.Request, next http.HandlerFun
 	next(rw, r)
 	fmt.Println("here end")
 }
-
+/*
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", APIHttpHandler)
@@ -28,3 +25,4 @@ func main() {
 	n.UseHandler(router)
 	_ = http.ListenAndServe(":3001", n)
 }
+*/

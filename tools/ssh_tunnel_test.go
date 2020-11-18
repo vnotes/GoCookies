@@ -23,7 +23,9 @@ func TestSSHTunnel(t *testing.T) {
 	}
 	ch := make(chan bool)
 	sshTunnel := SSHTunnel{localEndpoint, serverEndpoint, remoteEndpoint, sshConfig}
-	go sshTunnel.Start(&ch)
+	go func() {
+		_ = sshTunnel.Start(&ch)
+	}()
 	<-ch
 	sourceName := fmt.Sprintf("root:pw@tcp(127.0.0.1:%d)/db", localEndpoint.Port)
 	t.Log(sourceName)
