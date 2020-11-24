@@ -53,7 +53,9 @@ func (l *dlm) Lock(resource string, ttl int64) *RDBLocker {
 		val   = uniqueLockID()
 		drift = float64(ttl)*clockDriftFactor + 2
 	)
-	for l.retryCount >= 0 {
+
+	var n = l.retryCount
+	for n >= 0 {
 		var (
 			startTime = time.Now()
 			cnt       int
@@ -73,7 +75,7 @@ func (l *dlm) Lock(resource string, ttl int64) *RDBLocker {
 				Validity: validityTime,
 			}
 		}
-		l.retryCount -= 1
+		n -= 1
 		time.Sleep(time.Duration(l.retryDelay) * time.Millisecond)
 	}
 	for i := 0; i < len(l.rdb); i++ {
