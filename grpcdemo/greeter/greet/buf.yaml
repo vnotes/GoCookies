@@ -1,0 +1,4 @@
+version: v1beta1
+name: buf.build/myhost/mydemo
+deps:
+  - buf.build/beta/googleapis
