@@ -1,11 +1,18 @@
 syntax = "proto3";
 
+import "google/api/annotations.proto";
+
 option go_package = "grpcdemo/greet";
 
 package greet;
 
 service Greeter {
-    rpc SayHi(GreetRequest) returns (GreetResponse);
+    rpc SayHi(GreetRequest) returns (GreetResponse) {
+        option (google.api.http) = {
+            post: "/api/v1/greet"
+            body: "*"
+        };
+    };
 }
 
 message GreetRequest {
