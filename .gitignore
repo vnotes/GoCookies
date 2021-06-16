@@ -27,3 +27,4 @@
 .idea/
 .vscode/
 src/main
+main.go

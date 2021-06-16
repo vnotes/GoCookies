@@ -2,11 +2,13 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net"
 
 	pb "github.com/vnotes/gocookies/grpcdemo/greeter/greet"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 type server struct {
@@ -14,6 +16,8 @@ type server struct {
 }
 
 func (*server) SayHi(ctx context.Context, in *pb.GreetRequest) (*pb.GreetResponse, error) {
+	md, ok := metadata.FromIncomingContext(ctx)
+	fmt.Printf("got ctx %#v %t\n", md, ok)
 	return &pb.GreetResponse{Message: "Hi " + in.Name}, nil
 }
 

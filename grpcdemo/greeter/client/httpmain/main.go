@@ -6,6 +6,7 @@ import (
 
 	pb "github.com/vnotes/gocookies/grpcdemo/greeter/greet"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 func main() {
@@ -16,6 +17,7 @@ func main() {
 	defer conn.Close()
 	c := pb.NewGreeterClient(conn)
 	ctx := context.Background()
+	ctx = metadata.AppendToOutgoingContext(ctx, "X-A-bC-De", "ojkk")
 	reply, err := c.SayHi(ctx, &pb.GreetRequest{Name: "CTMD"})
 	if err != nil {
 		log.Fatalf("say hi error %s", err)
